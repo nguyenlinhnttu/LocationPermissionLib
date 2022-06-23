@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LocationPermissionLib</string>
+    <string name="action_accept">Accept</string>
+    <string name="action_deny">Deny</string>
+    <string name="title_location_disclosures">Location Permission</string>
+    <string name="msg_explanation_location_permission"><![CDATA[“<b>[This app]</b> collects location data to enable [\"feature\"], [\"feature\"], & [\"feature\"] even when the app is closed or not in use.”]]></string>
+</resources>
