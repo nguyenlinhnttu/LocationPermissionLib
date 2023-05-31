@@ -24,3 +24,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Run ktlint # checking code style
+      run: ./gradlew ktlintCheck
+    - name: Run detekt # checking code smell
+      run: ./gradlew detekt
+    - name: Run UnitTest
+      run: ./gradlew test
+    - name: Android Test Report Action
+      uses: asadmansr/android-test-report-action@v1.2.0
