@@ -56,13 +56,19 @@ jobs:
     - name: Upload APK Debug - ${{ env.repository_name }}
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) debug generated
+        name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }}
         path: ${{ env.main_project_module }}/build/outputs/apk/debug/
 
     # Noted For Output [main_project_module]/build/outputs/apk/release/
     - name: Upload APK Release - ${{ env.repository_name }}
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
-        path: ${{ env.main_project_module }}/build/outputs/apk/release/
+        name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }}
+        path: ${{ env.main_project_module }}/build/outputs/apk/release/uses: jmatsu/dg-upload-app-action@<version>
+    # Update APK To DeployGate
+    - name: DeployGate
+      with:
+        app_owner_name: Linh DeployGate
+        api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }} # for example
+        app_file_path: ${{ env.main_project_module }}/build/outputs/apk/debug/
 
