@@ -60,7 +60,7 @@ jobs:
     - name: Upload APK to DeployGate
       uses: jmatsu/dg-upload-app-action@v0.2
       with:
-        app_owner_name: <your DeployGate account/organization name>
-        api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }} # for example
+        app_owner_name: Nguyen Linh DeployGate
+        api_token: deploygate_xusr_M956ZkewjpZbBjYE7Df70SqUkl0tUX_260L8H
         app_file_path: ${{ env.main_project_module }}/build/outputs/apk/debug/       
 
