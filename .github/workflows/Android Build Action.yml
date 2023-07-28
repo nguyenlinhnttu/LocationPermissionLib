@@ -48,28 +48,28 @@ jobs:
       
    # Create Bundle AAB Release
     # Noted for main module build [main_project_module]:bundleRelease
-    - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
+    - name: Build app bundle release (AAB)
       run: ./gradlew ${{ env.main_project_module }}:bundleRelease    
       
     # Upload Artifact Build
     # Noted For Output [main_project_module]/build/outputs/apk/debug/
-    - name: Upload APK Debug - ${{ env.repository_name }}
+    - name: Upload APK Debug 
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }}
+        name: ${{ env.date_today }}-${{ env.playstore_name }}
         path: ${{ env.main_project_module }}/build/outputs/apk/debug/
 
     # Noted For Output [main_project_module]/build/outputs/apk/release/
     - name: Upload APK Release - ${{ env.repository_name }}
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }}
+        name: ${{ env.date_today }}-${{ env.playstore_name }}
         path: ${{ env.main_project_module }}/build/outputs/apk/release/
     # Update APK To DeployGate
     - name: DeployGate
       uses: jmatsu/dg-upload-app-action@v0.2
       with:
         app_owner_name: Linh DeployGate
-        api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }} # for example
+        api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
         app_file_path: ${{ env.main_project_module }}/build/outputs/apk/debug/
 
