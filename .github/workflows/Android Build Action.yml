@@ -71,5 +71,5 @@ jobs:
       with:
         app_owner_name: Linh DeployGate
         api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
-        app_file_path: ${{ env.main_project_module }}/build/outputs/apk/debug/
+        app_file_path: ${{ env.main_project_module }}/build/outputs/apk/debug/app-debug.apk
 
