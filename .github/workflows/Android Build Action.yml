@@ -58,7 +58,7 @@ jobs:
         name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
         path: ${{ env.main_project_module }}/build/outputs/apk/release/   
     - name: Upload APK to DeployGate
-      uses: jmatsu/dg-upload-app-action@v0.2
+      uses: jmatsu/dg-upload-app-action@v2
       with:
         app_owner_name: Nguyen Linh DeployGate
         api_token: deploygate_xusr_M956ZkewjpZbBjYE7Df70SqUkl0tUX_260L8H
